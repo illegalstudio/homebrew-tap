@@ -3,7 +3,7 @@ cask "lazyagent" do
   name "lazyagent"
   desc "A lazy TUI for monitoring Claude Code agent sessions"
   homepage "https://github.com/illegalstudio/lazyagent"
-  version "0.4.1"
+  version "0.5.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "lazyagent" do
   on_macos do
     on_intel do
       url "https://github.com/illegalstudio/lazyagent/releases/download/v#{version}/lazyagent_#{version}_darwin_amd64.tar.gz"
-      sha256 "001bc5b7bee8a7a63cc1954ee6fa3ffbdb1ea7cb96174e0884cbd6641206b245"
+      sha256 "74a7561f1943d113a5ca58e63241c3c53bf608b40681c96714b7d3532b80f14c"
     end
     on_arm do
       url "https://github.com/illegalstudio/lazyagent/releases/download/v#{version}/lazyagent_#{version}_darwin_arm64.tar.gz"
-      sha256 "e5607ce93799b78b9790b9d2813e49f8dffb8f73468e29f5535ccb1a401289ca"
+      sha256 "74365749fb496c1a1bc4e762bb13a2481df6277a81586b99bb503dace0fd1125"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/illegalstudio/lazyagent/releases/download/v#{version}/lazyagent_#{version}_linux_amd64.tar.gz"
-      sha256 "a75c992ca884e1358ccc47c544dfe2f790137389e22849d899f449965132f8f5"
+      sha256 "c3867f9ed06df72f30adc956500352b5fbaef23434b1bb381753e1d7a19e4531"
     end
     on_arm do
       url "https://github.com/illegalstudio/lazyagent/releases/download/v#{version}/lazyagent_#{version}_linux_arm64.tar.gz"
-      sha256 "f67c8b07d042b0759d29fdf1a03d8e7ead04100c854ee950e4facc2d0a78460c"
+      sha256 "8fe877a7b816f7638637a09b7d85f7869efa99d9ae51705fbb49b3e6bdaba9fd"
     end
   end
 
