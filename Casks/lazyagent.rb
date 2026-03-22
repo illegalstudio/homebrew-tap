@@ -14,22 +14,22 @@ cask "lazyagent" do
   on_macos do
     on_intel do
       url "https://github.com/illegalstudio/lazyagent/releases/download/v#{version}/lazyagent_#{version}_darwin_amd64.zip"
-      sha256 "b00423db07c186a2762fd0661338ac816e1f084e330c101cab28a76ed3101a6c"
+      sha256 "08efe05aad2791ebca7a27a127262a3b28cec061dfea9880ed071bb62a39bc99"
     end
     on_arm do
       url "https://github.com/illegalstudio/lazyagent/releases/download/v#{version}/lazyagent_#{version}_darwin_arm64.zip"
-      sha256 "3247974955fcfb0c589d4f25291e07c2fdeab0bee394df41f10cebc799c21036"
+      sha256 "8aa82e49da32c79b20c9a72d1ea16efe62f270ceb5be252a6f30162d7fb84906"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/illegalstudio/lazyagent/releases/download/v#{version}/lazyagent_#{version}_linux_amd64.tar.gz"
-      sha256 "514eff2290db64b53820ecade1c4c33a423681b8a5cfc12eb692ce4f5a716ae2"
+      sha256 "4b533ea9a587fe109e71be090e0f884d8841aacb8137751940d234e8a8377f95"
     end
     on_arm do
       url "https://github.com/illegalstudio/lazyagent/releases/download/v#{version}/lazyagent_#{version}_linux_arm64.tar.gz"
-      sha256 "1df651f180ecf4ab121d3288dd3d0ebf85ce0c765a26813c22362be650e9a0f8"
+      sha256 "caa3af0ee7d24a353167163d3181dc7f97c9abb883c6b7ff5117804539c3a105"
     end
   end
 
