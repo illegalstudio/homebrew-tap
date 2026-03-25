@@ -13,4 +13,5 @@ brew install <formula>
 
 | Formula | Description |
 |---------|-------------|
+| `elephc` | PHP-to-native compiler targeting macOS ARM64 |
 | `lazyagent` | A lazy TUI for monitoring Claude Code agent sessions |
