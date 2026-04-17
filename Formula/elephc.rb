@@ -1,9 +1,9 @@
 class Elephc < Formula
   desc "PHP-to-native compiler targeting macOS ARM64"
   homepage "https://github.com/illegalstudio/elephc"
-  url "https://github.com/illegalstudio/elephc/releases/download/v0.18.5/elephc-v0.18.5-aarch64-apple-darwin.tar.gz"
-  sha256 "ec4f6d23059b01ec76ea61f2787ae76493fd0f6fcbc068089b4a7140578ee1d6"
-  version "0.18.5"
+  url "https://github.com/illegalstudio/elephc/releases/download/v0.19.0/elephc-v0.19.0-aarch64-apple-darwin.tar.gz"
+  sha256 "dbf74d22cc890951c8ea1194047f7a40794225d03a6fbf3255ece7b7fa9fa07d"
+  version "0.19.0"
   license "MIT"
 
   depends_on :macos
