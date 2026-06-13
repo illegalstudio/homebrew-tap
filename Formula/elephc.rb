@@ -1,9 +1,9 @@
 class Elephc < Formula
   desc "PHP-to-native compiler targeting macOS ARM64"
   homepage "https://github.com/illegalstudio/elephc"
-  url "https://github.com/illegalstudio/elephc/releases/download/v0.23.10/elephc-v0.23.10-aarch64-apple-darwin.tar.gz"
-  sha256 "87c0c0999caf16a8ae8c523a705d4bec05938cdeeb15a1285f31b3fd01b20a2b"
-  version "0.23.10"
+  url "https://github.com/illegalstudio/elephc/releases/download/v0.23.11/elephc-v0.23.11-aarch64-apple-darwin.tar.gz"
+  sha256 "b23310451822e34cd56e4d8f4c7ed9dbe0455dbd3e085e377c0a9e1f711e34da"
+  version "0.23.11"
   license "MIT"
 
   depends_on :macos
@@ -13,6 +13,8 @@ class Elephc < Formula
     bin.install "elephc"
     lib.install "libelephc_tls.a"
     lib.install "libelephc_pdo.a"
+    lib.install "libelephc_crypto.a"
+    lib.install "libelephc_phar.a"
   end
 
   test do
@@ -21,15 +23,25 @@ class Elephc < Formula
     assert_equal "hello", shell_output("#{testpath}/hello")
 
     # Exercise the TLS bridge (https wrapper).
-    (testpath/"https.php").write('<?php  = fopen("https://example.com/", "r"); echo is_resource();')
+    (testpath/"https.php").write('<?php $h = fopen("https://example.com/", "r"); echo is_resource($h);')
     system bin/"elephc", "https.php"
     assert_predicate testpath/"https", :exist?
 
     # Exercise the PDO bridge (SQLite driver is bundled; no external
     # DB client or server required). This also validates that
-    # libelephc_pdo.a is discoverable in the Homebrew  layout.
-    (testpath/"pdo.php").write('<?php  = new PDO("sqlite::memory:"); ->exec("CREATE TABLE t(id INTEGER)"); echo "pdo-ok";')
+    # libelephc_pdo.a is discoverable in the Homebrew lib/ layout.
+    (testpath/"pdo.php").write('<?php $db = new PDO("sqlite::memory:"); $db->exec("CREATE TABLE t(id INTEGER)"); echo "pdo-ok";')
     system bin/"elephc", "pdo.php"
     assert_equal "pdo-ok", shell_output("#{testpath}/pdo")
+
+    # Exercise the crypto bridge used by hash()/hash_hmac().
+    (testpath/"hash.php").write('<?php echo hash("sha256", "abc");')
+    system bin/"elephc", "hash.php"
+    assert_equal "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad", shell_output("#{testpath}/hash")
+
+    # Exercise the PHAR bridge from the Homebrew lib/ layout.
+    (testpath/"phar.php").write('<?php file_put_contents("phar://brew.phar/entry.txt", "phar-ok"); $p = "brew.phar"; echo file_get_contents("phar://" . $p . "/entry.txt");')
+    system bin/"elephc", "phar.php"
+    assert_equal "phar-ok", shell_output("#{testpath}/phar")
   end
 end
