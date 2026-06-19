@@ -1,9 +1,9 @@
 class Elephc < Formula
   desc "PHP-to-native compiler targeting macOS ARM64"
   homepage "https://github.com/illegalstudio/elephc"
-  url "https://github.com/illegalstudio/elephc/releases/download/v0.24.3/elephc-v0.24.3-aarch64-apple-darwin.tar.gz"
-  sha256 "5bd38711dcf3a1cc13045e561001c576f8ba2514627b7b3adcca9dc9d95ef9a3"
-  version "0.24.3"
+  url "https://github.com/illegalstudio/elephc/releases/download/v0.25.0/elephc-v0.25.0-aarch64-apple-darwin.tar.gz"
+  sha256 "25e807f5583ddafaf3fb757708cb5ac9ccd982aa02ee41ca99a4a8b71ee07bd7"
+  version "0.25.0"
   license "MIT"
 
   depends_on :macos
@@ -15,6 +15,7 @@ class Elephc < Formula
     lib.install "libelephc_pdo.a"
     lib.install "libelephc_crypto.a"
     lib.install "libelephc_phar.a"
+    lib.install "libelephc_tz.a"
   end
 
   test do
@@ -43,5 +44,11 @@ class Elephc < Formula
     (testpath/"phar.php").write('<?php file_put_contents("phar://brew.phar/entry.txt", "phar-ok"); $p = "brew.phar"; echo file_get_contents("phar://" . $p . "/entry.txt");')
     system bin/"elephc", "phar.php"
     assert_equal "phar-ok", shell_output("#{testpath}/phar")
+
+    # Exercise the timezone-database bridge (DateTimeZone introspection)
+    # from the Homebrew lib/ layout; getLocation() reads libelephc_tz.a.
+    (testpath/"tz.php").write('<?php echo (new DateTimeZone("Europe/Rome"))->getLocation()["country_code"];')
+    system bin/"elephc", "tz.php"
+    assert_equal "IT", shell_output("#{testpath}/tz")
   end
 end
