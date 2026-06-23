@@ -1,9 +1,9 @@
 class Elephc < Formula
   desc "PHP-to-native compiler targeting macOS ARM64"
   homepage "https://github.com/illegalstudio/elephc"
-  url "https://github.com/illegalstudio/elephc/releases/download/v0.25.0/elephc-v0.25.0-aarch64-apple-darwin.tar.gz"
-  sha256 "25e807f5583ddafaf3fb757708cb5ac9ccd982aa02ee41ca99a4a8b71ee07bd7"
-  version "0.25.0"
+  url "https://github.com/illegalstudio/elephc/releases/download/v0.25.1/elephc-v0.25.1-aarch64-apple-darwin.tar.gz"
+  sha256 "62a3de26e094246ce84dfb5e6f9a0b35a10cad59f012595bb35666fefe8d815e"
+  version "0.25.1"
   license "MIT"
 
   depends_on :macos
@@ -16,6 +16,7 @@ class Elephc < Formula
     lib.install "libelephc_crypto.a"
     lib.install "libelephc_phar.a"
     lib.install "libelephc_tz.a"
+    lib.install "libelephc_image.a"
   end
 
   test do
@@ -50,5 +51,11 @@ class Elephc < Formula
     (testpath/"tz.php").write('<?php echo (new DateTimeZone("Europe/Rome"))->getLocation()["country_code"];')
     system bin/"elephc", "tz.php"
     assert_equal "IT", shell_output("#{testpath}/tz")
+
+    # Exercise the image bridge (GD) from the Homebrew lib/ layout;
+    # validates that libelephc_image.a is discoverable and linked.
+    (testpath/"img.php").write('<?php $im = imagecreatetruecolor(3, 2); echo imagesx($im) . "x" . imagesy($im);')
+    system bin/"elephc", "img.php"
+    assert_equal "3x2", shell_output("#{testpath}/img")
   end
 end
