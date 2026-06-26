@@ -1,9 +1,9 @@
 class Elephc < Formula
   desc "PHP-to-native compiler targeting macOS ARM64"
   homepage "https://github.com/illegalstudio/elephc"
-  url "https://github.com/illegalstudio/elephc/releases/download/v0.25.1/elephc-v0.25.1-aarch64-apple-darwin.tar.gz"
-  sha256 "62a3de26e094246ce84dfb5e6f9a0b35a10cad59f012595bb35666fefe8d815e"
-  version "0.25.1"
+  url "https://github.com/illegalstudio/elephc/releases/download/v0.25.2/elephc-v0.25.2-aarch64-apple-darwin.tar.gz"
+  sha256 "fdf2c1dc53ba1521c3b4133edb7e3c83bf235c70ca06355832e2f206d1791699"
+  version "0.25.2"
   license "MIT"
 
   depends_on :macos
@@ -17,6 +17,7 @@ class Elephc < Formula
     lib.install "libelephc_phar.a"
     lib.install "libelephc_tz.a"
     lib.install "libelephc_image.a"
+    lib.install "libelephc_web.a"
   end
 
   test do
@@ -57,5 +58,10 @@ class Elephc < Formula
     (testpath/"img.php").write('<?php $im = imagecreatetruecolor(3, 2); echo imagesx($im) . "x" . imagesy($im);')
     system bin/"elephc", "img.php"
     assert_equal "3x2", shell_output("#{testpath}/img")
+
+    # Exercise the web bridge link path from the Homebrew lib/ layout.
+    (testpath/"web.php").write('<?php echo "web-ok";')
+    system bin/"elephc", "--web", "web.php"
+    assert_predicate testpath/"web", :exist?
   end
 end
