@@ -17,3 +17,4 @@ brew install <formula>
 | `ggg` | Clone and manage Git repositories from a YAML configuration file |
 | `ggw` | Ergonomic Git worktree manager with predictable shared worktree storage |
 | `lazyagent` | A lazy TUI for monitoring Claude Code agent sessions |
+| `mnemo` | Local-first desktop app to archive and search your AI chat conversations |
