@@ -1,9 +1,9 @@
 class Elephc < Formula
   desc "PHP-to-native compiler targeting macOS ARM64"
   homepage "https://github.com/illegalstudio/elephc"
-  url "https://github.com/illegalstudio/elephc/releases/download/v0.26.3/elephc-v0.26.3-aarch64-apple-darwin.tar.gz"
-  sha256 "f294433b770b5543974b94dbdc30f345292b129cad4288a0beeef1d3fb246741"
-  version "0.26.3"
+  url "https://github.com/illegalstudio/elephc/releases/download/v0.26.4/elephc-v0.26.4-aarch64-apple-darwin.tar.gz"
+  sha256 "88d17014da15f1ec69c7ba14a2811804ff927949690f6cc4ba0923a2e819db5d"
+  version "0.26.4"
   license "MIT"
 
   depends_on :macos
@@ -14,6 +14,7 @@ class Elephc < Formula
     lib.install "libelephc_tls.a"
     lib.install "libelephc_pdo.a"
     lib.install "libelephc_crypto.a"
+    lib.install "libelephc_bcmath.a"
     lib.install "libelephc_phar.a"
     lib.install "libelephc_tz.a"
     lib.install "libelephc_image.a"
@@ -41,6 +42,11 @@ class Elephc < Formula
     (testpath/"hash.php").write('<?php echo hash("sha256", "abc");')
     system bin/"elephc", "hash.php"
     assert_equal "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad", shell_output("#{testpath}/hash")
+
+    # Exercise the exact-decimal BCMath bridge.
+    (testpath/"bcmath.php").write('<?php echo bcadd("1.25", "2.50", 2);')
+    system bin/"elephc", "bcmath.php"
+    assert_equal "3.75", shell_output("#{testpath}/bcmath")
 
     # Exercise the PHAR bridge from the Homebrew lib/ layout.
     (testpath/"phar.php").write('<?php file_put_contents("phar://brew.phar/entry.txt", "phar-ok"); $p = "brew.phar"; echo file_get_contents("phar://" . $p . "/entry.txt");')
