@@ -5,20 +5,20 @@
 class LazyagentCli < Formula
   desc "Lazy TUI for monitoring coding agent sessions"
   homepage "https://github.com/illegalstudio/lazyagent"
-  version "0.13.0"
+  version "0.13.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/illegalstudio/lazyagent/releases/download/v0.13.0/lazyagent-cli_0.13.0_darwin_amd64.zip"
-      sha256 "f9a29f0dac3d4af6002ca44a3d20a3afe2a4bdaf6ad11a66aa5d22ec7272e46b"
+      url "https://github.com/illegalstudio/lazyagent/releases/download/v0.13.1/lazyagent-cli_0.13.1_darwin_amd64.zip"
+      sha256 "2fbf1960ffbc51cf25eaae6d6bf66e15fda0ade83856c6f723ae78f717fe39d3"
 
       define_method(:install) do
         bin.install "lazyagent"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/illegalstudio/lazyagent/releases/download/v0.13.0/lazyagent-cli_0.13.0_darwin_arm64.zip"
-      sha256 "1cfd19e5ae45a685eee444d0a956e42239cdddd590f20c926861db6cd92a9671"
+      url "https://github.com/illegalstudio/lazyagent/releases/download/v0.13.1/lazyagent-cli_0.13.1_darwin_arm64.zip"
+      sha256 "c4ac7c614155ea27dc86644658265307adb49c51c18846b7e878257f63176e2b"
 
       define_method(:install) do
         bin.install "lazyagent"
@@ -28,15 +28,15 @@ class LazyagentCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/illegalstudio/lazyagent/releases/download/v0.13.0/lazyagent-cli_0.13.0_linux_amd64.tar.gz"
-      sha256 "071ce02a331d408e1fce019ae5c47aa92852e14089b557c7f7902dd5653197de"
+      url "https://github.com/illegalstudio/lazyagent/releases/download/v0.13.1/lazyagent-cli_0.13.1_linux_amd64.tar.gz"
+      sha256 "3cc2b2544687f4c41746038024ba0ba63b5af455a623e7d2bde298ed57814a65"
       define_method(:install) do
         bin.install "lazyagent"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/illegalstudio/lazyagent/releases/download/v0.13.0/lazyagent-cli_0.13.0_linux_arm64.tar.gz"
-      sha256 "e6c154e5dbcd29f48451a833c919b399493d2ef927e627ae6bc1f6beaf6e2c79"
+      url "https://github.com/illegalstudio/lazyagent/releases/download/v0.13.1/lazyagent-cli_0.13.1_linux_arm64.tar.gz"
+      sha256 "0cc3a9fdc52857ed05ac813de137b7faa160c04b48cf4f3c360777e26a8595e4"
       define_method(:install) do
         bin.install "lazyagent"
       end
