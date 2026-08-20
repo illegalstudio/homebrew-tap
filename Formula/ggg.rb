@@ -1,28 +1,28 @@
 class Ggg < Formula
   desc "Clone and manage git repositories from a YAML configuration file"
   homepage "https://github.com/illegalstudio/ggg"
-  version "0.1.6"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/illegalstudio/ggg/releases/download/v0.1.6/ggg_0.1.6_darwin_arm64.zip"
-      sha256 "d08a9ccaf01d3cbcab0efef2b6f7cf55edbb9de2244f6802431091d67762dbb9"
+      url "https://github.com/illegalstudio/ggg/releases/download/v0.2.0/ggg_0.2.0_darwin_arm64.zip"
+      sha256 "798c19e272d44674d6898a46dadee55e6001eff9b68486b8cb04e7450c82174d"
     end
     on_intel do
-      url "https://github.com/illegalstudio/ggg/releases/download/v0.1.6/ggg_0.1.6_darwin_amd64.zip"
-      sha256 "d14623133ecb2d76d20721cdd32f3600af17c8ccf6d1aa976d629ec06e491a83"
+      url "https://github.com/illegalstudio/ggg/releases/download/v0.2.0/ggg_0.2.0_darwin_amd64.zip"
+      sha256 "312fb1118b8bd6801f62574ee3ebf059c03ffb7f6ac736b07616697956bdbcb1"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/illegalstudio/ggg/releases/download/v0.1.6/ggg_0.1.6_linux_arm64.tar.gz"
-      sha256 "3594e6379f3eb4122e0e47fe593a853a8edd80d5e4f541f3ab255c84331e0e8b"
+      url "https://github.com/illegalstudio/ggg/releases/download/v0.2.0/ggg_0.2.0_linux_arm64.tar.gz"
+      sha256 "29a71de737c6f8233841c73df99009f7870252c728dc507e09b6fef921272de5"
     end
     on_intel do
-      url "https://github.com/illegalstudio/ggg/releases/download/v0.1.6/ggg_0.1.6_linux_amd64.tar.gz"
-      sha256 "350ada2f225480f11c8f41246639f58f029494ff5b7490c0bd4e0553d913cf3f"
+      url "https://github.com/illegalstudio/ggg/releases/download/v0.2.0/ggg_0.2.0_linux_amd64.tar.gz"
+      sha256 "1355e7f607145c017286bbf12ceb7d40332a94c5c145676ba028cdcdb5dc7fc6"
     end
   end
 
@@ -30,7 +30,15 @@ class Ggg < Formula
     bin.install "ggg"
   end
 
+  def caveats
+    <<~EOS
+      Install the bundled GGG skill for AI agents with:
+        ggg skills install
+    EOS
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/ggg --version")
+    assert_match "skills", shell_output("#{bin}/ggg --help")
   end
 end
