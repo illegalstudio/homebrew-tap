@@ -5,7 +5,7 @@ cask "lazyagent" do
   version "0.13.2"
 
   on_macos do
-    sha256 "3d4538cbbfe17c94f85c182f036a981edd5fd153c17418c606f64bd761906560"
+    sha256 "96814b113907af163d7080ec0bceaab6acdac45eb7d0dbe45bf6cbbcf64741d7"
     url "https://github.com/illegalstudio/lazyagent/releases/download/v#{version}/Lazyagent_#{version}_darwin_universal.zip"
   end
 
