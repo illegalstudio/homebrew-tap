@@ -1,9 +1,9 @@
 class Elephc < Formula
   desc "PHP-to-native compiler targeting macOS ARM64"
   homepage "https://github.com/illegalstudio/elephc"
-  url "https://github.com/illegalstudio/elephc/releases/download/v0.26.5/elephc-v0.26.5-aarch64-apple-darwin.tar.gz"
-  sha256 "574efb65c9920e100c99b42652a0299ba114810a7fe47de6b0432ffd03ade582"
-  version "0.26.5"
+  url "https://github.com/illegalstudio/elephc/releases/download/v0.26.6/elephc-v0.26.6-aarch64-apple-darwin.tar.gz"
+  sha256 "a614483322d076bff9ba925980cea1ba72ca4a4b6e5be96c9bd162080e48fe19"
+  version "0.26.6"
   license "MIT"
 
   depends_on :macos
@@ -15,10 +15,16 @@ class Elephc < Formula
     lib.install "libelephc_pdo.a"
     lib.install "libelephc_crypto.a"
     lib.install "libelephc_bcmath.a"
+    lib.install "libelephc_iconv.a"
     lib.install "libelephc_phar.a"
     lib.install "libelephc_tz.a"
     lib.install "libelephc_image.a"
+    lib.install "libelephc_probe.a"
+    lib.install "libelephc_instr.a"
     lib.install "libelephc_web.a"
+    lib.install "libelephc_magician.a"
+    lib.install "libelephc_curl.a"
+    lib.install "libelephc_magician_curl.a"
   end
 
   test do
