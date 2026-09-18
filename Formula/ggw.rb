@@ -1,28 +1,28 @@
 class Ggw < Formula
   desc "Git worktrees, ergonomic — store all worktrees of all your repos in a predictable location"
   homepage "https://github.com/illegalstudio/ggw"
-  version "0.3.2"
+  version "0.3.3"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/illegalstudio/ggw/releases/download/v0.3.2/ggw_0.3.2_darwin_arm64.zip"
-      sha256 "0e7c2719c69183f8974060c31b0bcdff9e72a17b1d7a6d5c23166ba3cbf85cbc"
+      url "https://github.com/illegalstudio/ggw/releases/download/v0.3.3/ggw_0.3.3_darwin_arm64.zip"
+      sha256 "02c67f5c9d4fc2301729e0a11d1790d1a2ed47b74420ab6b2f4e736c50905b7e"
     end
     on_intel do
-      url "https://github.com/illegalstudio/ggw/releases/download/v0.3.2/ggw_0.3.2_darwin_amd64.zip"
-      sha256 "5dce1ee93b1f8def0cf92a5136a8bde15e55b75bd7203faf2491b1f8de90391a"
+      url "https://github.com/illegalstudio/ggw/releases/download/v0.3.3/ggw_0.3.3_darwin_amd64.zip"
+      sha256 "cfc4fe7aecc46159d6b41ce16dde6d51b2517ff57b2d9e1fd789b1af05a77382"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/illegalstudio/ggw/releases/download/v0.3.2/ggw_0.3.2_linux_arm64.tar.gz"
-      sha256 "28c981035ae10b079ef9ed5b28b50d1781e81de5e118301105194e15449570d8"
+      url "https://github.com/illegalstudio/ggw/releases/download/v0.3.3/ggw_0.3.3_linux_arm64.tar.gz"
+      sha256 "20b57b03fa2a3c79412ca1c7ee7f2e57c39ecb223e45f7147eac4ebc41537b73"
     end
     on_intel do
-      url "https://github.com/illegalstudio/ggw/releases/download/v0.3.2/ggw_0.3.2_linux_amd64.tar.gz"
-      sha256 "cd08557804471e9112a0515d2f19a2db6e917280189e608a225dba31f166527f"
+      url "https://github.com/illegalstudio/ggw/releases/download/v0.3.3/ggw_0.3.3_linux_amd64.tar.gz"
+      sha256 "ab3e6e1bbae60f9d2ade7f37cae2eac1d77aa1ed317803168627f5a86e0172fd"
     end
   end
 
