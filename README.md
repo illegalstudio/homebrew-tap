@@ -18,3 +18,4 @@ brew install <formula>
 | `ggw` | Ergonomic Git worktree manager with predictable shared worktree storage |
 | `lazyagent` | A lazy TUI for monitoring Claude Code agent sessions |
 | `mnemo` | Local-first desktop app to archive and search your AI chat conversations |
+| `codejournal-cli` | Project memory and work history for developers and coding agents |
