@@ -19,3 +19,4 @@ brew install <formula>
 | `lazyagent` | A lazy TUI for monitoring Claude Code agent sessions |
 | `mnemo` | Local-first desktop app to archive and search your AI chat conversations |
 | `codejournal-cli` | Project memory and work history for developers and coding agents |
+| `pxon` | CLI for managing Proxmox VE LXC containers |
