@@ -1,27 +1,27 @@
 class Pxon < Formula
   desc "Create and manage Proxmox VE LXC containers"
   homepage "https://github.com/illegalstudio/pxon"
-  version "0.2.0"
+  version "0.3.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/illegalstudio/pxon/releases/download/v0.2.0/pxon_0.2.0_darwin_arm64.zip"
-      sha256 "cd1c1eae41619a99f54200208464395bbe21dbed7b08eb917fc00e2fdae247c2"
+      url "https://github.com/illegalstudio/pxon/releases/download/v0.3.0/pxon_0.3.0_darwin_arm64.zip"
+      sha256 "9170d9b4f2390c62b349e803780c900d0158963a881757d2b44de4ea3defd0c4"
     end
     on_intel do
-      url "https://github.com/illegalstudio/pxon/releases/download/v0.2.0/pxon_0.2.0_darwin_amd64.zip"
-      sha256 "b41e8ff8dab1fb4033f37295cedfa213e0f13e7de45226d7d1610a765425eee9"
+      url "https://github.com/illegalstudio/pxon/releases/download/v0.3.0/pxon_0.3.0_darwin_amd64.zip"
+      sha256 "7a8388cb676e9d6ffca77e14abfa1938277bcc4ad2f47f3476d4c3e100688985"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/illegalstudio/pxon/releases/download/v0.2.0/pxon_0.2.0_linux_arm64.tar.gz"
-      sha256 "fc6afa5a5ef53c8abc40f3036e66892b37480ad5a71f716ab60ae5d4801e2087"
+      url "https://github.com/illegalstudio/pxon/releases/download/v0.3.0/pxon_0.3.0_linux_arm64.tar.gz"
+      sha256 "f496109bf6e671be7703e9729b53ceb731a0e4c386a0d3756e638143a01f7415"
     end
     on_intel do
-      url "https://github.com/illegalstudio/pxon/releases/download/v0.2.0/pxon_0.2.0_linux_amd64.tar.gz"
-      sha256 "df255bce8230f0bb48e63531747e510064a51d51d4115ef130c1f64d99879395"
+      url "https://github.com/illegalstudio/pxon/releases/download/v0.3.0/pxon_0.3.0_linux_amd64.tar.gz"
+      sha256 "57597cb2acc6331bf3f0c6a229b78bf1a453b25718609cdd5386a71ae2d014c2"
     end
   end
 
