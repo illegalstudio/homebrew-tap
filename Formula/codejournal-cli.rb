@@ -6,21 +6,21 @@ class CodejournalCli < Formula
   on_macos do
     on_arm do
       url "https://github.com/illegalstudio/codejournal-cli/releases/download/v0.1.0/codejournal-cli-v0.1.0-macos-arm64.tar.gz"
-      sha256 "de7fb317e088de4fd9fb810fc86cd74e1899c22198ffc8a97e8f8e50db0b894d"
+      sha256 "5dbbd1bc3df871a75e33e66985a2d12ce0691522a5db87586966b066b4e1177d"
     end
     on_intel do
       url "https://github.com/illegalstudio/codejournal-cli/releases/download/v0.1.0/codejournal-cli-v0.1.0-macos-x64.tar.gz"
-      sha256 "0a07bab703fb01180fd861385863b4e8f40644e5f4369a77c6b24e73b60e1157"
+      sha256 "7dfbf2ed931f2c7331b5b1fd84f85d041691f99121ccbb503237a0b28c5a6fb4"
     end
   end
   on_linux do
     on_arm do
       url "https://github.com/illegalstudio/codejournal-cli/releases/download/v0.1.0/codejournal-cli-v0.1.0-linux-arm64.tar.gz"
-      sha256 "a79d16920accfe969298faae9bba07312e1da9c77bcc85f37bcfb9238e273ac6"
+      sha256 "5ad33d4bd287dfc4fbfb97e1221675d476766bee5e9e9777831ebc2ab3218ed6"
     end
     on_intel do
       url "https://github.com/illegalstudio/codejournal-cli/releases/download/v0.1.0/codejournal-cli-v0.1.0-linux-x64.tar.gz"
-      sha256 "a20f53d3c1b45e05457c0ca59e61132c3f288e1fce4175b81dbdd178b819ce31"
+      sha256 "8522f491f8f196ca8c35e83bf06d24639e5b63cf9fcab6b633251482ff46c8c8"
     end
   end
   def install
