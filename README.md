@@ -21,6 +21,7 @@ brew install --cask <cask>
 | `ggg` | Clone and manage Git repositories from a YAML configuration file |
 | `ggw` | Ergonomic Git worktree manager with predictable shared worktree storage |
 | `lazyagent-cli` | Lazy TUI for monitoring coding agent sessions |
+| `plib` | Terminal prompt library with global and project scopes and Git synchronization |
 | `pxon` | CLI for managing Proxmox VE LXC containers |
 
 ## Casks
