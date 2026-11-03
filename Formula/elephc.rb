@@ -1,9 +1,9 @@
 class Elephc < Formula
   desc "PHP-to-native compiler targeting macOS ARM64"
   homepage "https://github.com/illegalstudio/elephc"
-  url "https://github.com/illegalstudio/elephc/releases/download/v0.27.6/elephc-v0.27.6-aarch64-apple-darwin.tar.gz"
-  sha256 "01a7b8ce132f4bfbe1075fc235104e4ebc4f8f29f8084369c3dbe6ff598b9778"
-  version "0.27.6"
+  url "https://github.com/illegalstudio/elephc/releases/download/v0.27.7/elephc-v0.27.7-aarch64-apple-darwin.tar.gz"
+  sha256 "96d9a3a378713c8380f01567c37a1ee188d06e659ccdba1dedf011bd81f4cd9e"
+  version "0.27.7"
   license "MIT"
 
   depends_on :macos
@@ -15,6 +15,8 @@ class Elephc < Formula
     lib.install "libelephc_pdo.a"
     lib.install "libelephc_crypto.a"
     lib.install "libelephc_bcmath.a"
+    lib.install "libelephc_gmp.a"
+    lib.install "libelephc_random.a"
     lib.install "libelephc_mbstring.a"
     lib.install "libelephc_iconv.a"
     lib.install "libelephc_phar.a"
@@ -25,10 +27,14 @@ class Elephc < Formula
     lib.install "libelephc_web.a"
     lib.install "libelephc_pcntl.a"
     lib.install "libelephc_xml.a"
+    lib.install "libelephc_fileinfo.a"
+    lib.install "libelephc_tokenizer.a"
     lib.install "libelephc_magician.a"
     lib.install "libelephc_curl.a"
     lib.install "libelephc_magician_curl.a"
+    lib.install "libelephc_zend.a"
     pkgshare.install "mbstring-notices"
+    pkgshare.install "fileinfo-notices"
   end
 
   test do
