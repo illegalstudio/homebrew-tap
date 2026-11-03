@@ -1,30 +1,30 @@
 class Plib < Formula
   desc "A prompt library for your terminal"
   homepage "https://github.com/illegalstudio/prompt-library"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
     on_arm do
-      url "https://github.com/illegalstudio/prompt-library/releases/download/v0.1.2/plib_0.1.2_darwin_arm64.zip"
-      sha256 "b2d0a6c6f4f92df9b1c403466eed185532d5c12ecf69f7710f76881ff719f8a6"
+      url "https://github.com/illegalstudio/prompt-library/releases/download/v0.1.3/plib_0.1.3_darwin_arm64.zip"
+      sha256 "b625cb109e3226f6a79fe55e26579c923efc8486462d8560c5a15cde7af5dfc3"
     end
     on_intel do
-      url "https://github.com/illegalstudio/prompt-library/releases/download/v0.1.2/plib_0.1.2_darwin_amd64.zip"
-      sha256 "8b314c45df24248cceb025f922c9f46c6a8bf44028a8194d7a37ee361b5b42f0"
+      url "https://github.com/illegalstudio/prompt-library/releases/download/v0.1.3/plib_0.1.3_darwin_amd64.zip"
+      sha256 "25a867ae4b2af5820b63ce78eb8277e6d286cba0c86a9b5e9d6ec78e851fdba0"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/illegalstudio/prompt-library/releases/download/v0.1.2/plib_0.1.2_linux_arm64.tar.gz"
-      sha256 "3661ed8903caa0429dc09b290ac9437cabf02ef464a07d7170df77be8b608ab2"
+      url "https://github.com/illegalstudio/prompt-library/releases/download/v0.1.3/plib_0.1.3_linux_arm64.tar.gz"
+      sha256 "ae6f69ae055f1e26a6f60768cf16ce016c97b0d8b6f2f7bb5a057b7279ea4dda"
     end
     on_intel do
-      url "https://github.com/illegalstudio/prompt-library/releases/download/v0.1.2/plib_0.1.2_linux_amd64.tar.gz"
-      sha256 "e89167f18e93d2d5993b50a744608b95dd26fb59f7d98b643172319d34da840d"
+      url "https://github.com/illegalstudio/prompt-library/releases/download/v0.1.3/plib_0.1.3_linux_amd64.tar.gz"
+      sha256 "635c22fe312b7ef56364f0e9b97edd360fb327148ee053b686ed92c6e449fa93"
     end
   end
 
