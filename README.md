@@ -28,5 +28,6 @@ brew install --cask <cask>
 
 | Cask | Description |
 |------|-------------|
+| `gleaner` | Desktop moodboard for links, images, videos and notes |
 | `lazyagent` | Desktop app for monitoring coding agent sessions (includes the CLI) |
 | `mnemo` | Local-first desktop app to archive and search your AI chat conversations |
