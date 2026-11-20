@@ -1,9 +1,9 @@
 class Elephc < Formula
   desc "PHP-to-native compiler targeting macOS ARM64"
   homepage "https://github.com/illegalstudio/elephc"
-  url "https://github.com/illegalstudio/elephc/releases/download/v0.27.8/elephc-v0.27.8-aarch64-apple-darwin.tar.gz"
-  sha256 "1f3d7da34437b67bf1b6544e9e43145eea1b3ceeb5516ad4f045e113d3519185"
-  version "0.27.8"
+  url "https://github.com/illegalstudio/elephc/releases/download/v0.27.9/elephc-v0.27.9-aarch64-apple-darwin.tar.gz"
+  sha256 "b43a8c8ede3d9b1798efae2b7e29b55136eafee24bc5dd5866d2b3984423a907"
+  version "0.27.9"
   license "MIT"
 
   depends_on :macos
@@ -18,6 +18,7 @@ class Elephc < Formula
     lib.install "libelephc_bcmath.a"
     lib.install "libelephc_gmp.a"
     lib.install "libelephc_random.a"
+    lib.install "libelephc_uri.a"
     lib.install "libelephc_mbstring.a"
     lib.install "libelephc_iconv.a"
     lib.install "libelephc_phar.a"
@@ -29,6 +30,7 @@ class Elephc < Formula
     lib.install "libelephc_pcntl.a"
     lib.install "libelephc_xml.a"
     lib.install "libelephc_fileinfo.a"
+    lib.install "libelephc_tidy.a"
     lib.install "libelephc_tokenizer.a"
     lib.install "libelephc_magician.a"
     lib.install "libelephc_reference.a"
