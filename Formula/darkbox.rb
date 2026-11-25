@@ -1,23 +1,23 @@
 class Darkbox < Formula
   desc "Offline inspection and verification of Darkbox project archives"
   homepage "https://illegal.studio/en/products/darkbox"
-  version "1.6.2"
+  version "2.0.0"
   license "MIT"
 
   on_macos do
     depends_on arch: :arm64
-    url "https://github.com/illegalstudio/darkbox/releases/download/v1.6.2/darkbox_1.6.2_darwin_arm64.zip"
-    sha256 "bba0b67cc81624c02038f58339affd7acc84efd0611020dacf6ff3bea29e3d61"
+    url "https://github.com/illegalstudio/darkbox/releases/download/v2.0.0/darkbox_2.0.0_darwin_arm64.zip"
+    sha256 "112a2c07cac945be2f6cd48e2f25c7f2c161c9a98b360d5f3aa577d853cb031a"
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/illegalstudio/darkbox/releases/download/v1.6.2/darkbox_1.6.2_linux_arm64.tar.gz"
-      sha256 "8e3b3582d44c5453d2f58adefdc2c417788ac022a57ad15dae8a2e9e2f44860f"
+      url "https://github.com/illegalstudio/darkbox/releases/download/v2.0.0/darkbox_2.0.0_linux_arm64.tar.gz"
+      sha256 "86dc34675913e688d721e59c5412b9d75861bc12adef777ff2a0db39db42176a"
     end
     on_intel do
-      url "https://github.com/illegalstudio/darkbox/releases/download/v1.6.2/darkbox_1.6.2_linux_amd64.tar.gz"
-      sha256 "9f0a888012d92557920b07f978c94848a5d3b66922d171b023a922940ee2029a"
+      url "https://github.com/illegalstudio/darkbox/releases/download/v2.0.0/darkbox_2.0.0_linux_amd64.tar.gz"
+      sha256 "4020eede9cf10ede941191dd69f2ce6c7a1e5b3ac605d535039efb52ba208c75"
     end
   end
 
@@ -27,7 +27,7 @@ class Darkbox < Formula
   end
 
   test do
-    assert_match "1.6.2", shell_output("#{bin}/darkbox --version")
+    assert_match "2.0.0", shell_output("#{bin}/darkbox --version")
     assert_match "verify", shell_output("#{bin}/darkbox --help")
     assert_match "darkbox", shell_output("#{bin}/darkbox versions --json")
   end
