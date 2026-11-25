@@ -1,28 +1,28 @@
 class Ggg < Formula
   desc "Clone and manage git repositories from a YAML configuration file"
   homepage "https://github.com/illegalstudio/ggg"
-  version "0.2.2"
+  version "0.2.3"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/illegalstudio/ggg/releases/download/v0.2.2/ggg_0.2.2_darwin_arm64.zip"
-      sha256 "7ff882e994da0392c2573df2199a89cffc52392464ea161f2052c4e0c948b14d"
+      url "https://github.com/illegalstudio/ggg/releases/download/v0.2.3/ggg_0.2.3_darwin_arm64.zip"
+      sha256 "ede3812492222cf81d1418ffcbd13e106be95037842e09f7b618293563d19340"
     end
     on_intel do
-      url "https://github.com/illegalstudio/ggg/releases/download/v0.2.2/ggg_0.2.2_darwin_amd64.zip"
-      sha256 "a2695d2b9ca2ad96ec71cc8154c927235450d15ee7dd275211d13744f44a0803"
+      url "https://github.com/illegalstudio/ggg/releases/download/v0.2.3/ggg_0.2.3_darwin_amd64.zip"
+      sha256 "4dac61a5acf833d2fba1a212a706f3189a4af5802c0ee02b0a929a6fcad71368"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/illegalstudio/ggg/releases/download/v0.2.2/ggg_0.2.2_linux_arm64.tar.gz"
-      sha256 "63a4b3f7614ebec8b4b46a596fe125e4fb76be363febebc819584058e827f19e"
+      url "https://github.com/illegalstudio/ggg/releases/download/v0.2.3/ggg_0.2.3_linux_arm64.tar.gz"
+      sha256 "bd888c479fff4ca92d69f9771c96bf64eb02e11e3303ce86e349bf1b834c8d4c"
     end
     on_intel do
-      url "https://github.com/illegalstudio/ggg/releases/download/v0.2.2/ggg_0.2.2_linux_amd64.tar.gz"
-      sha256 "7784d56c6159923bfabba36349312168584b25bc78ec844534e81fcca9a10907"
+      url "https://github.com/illegalstudio/ggg/releases/download/v0.2.3/ggg_0.2.3_linux_amd64.tar.gz"
+      sha256 "df1ef134fc32c0e37e9fb36f77106c81c63b6e288f04cbfa6ddfc9c324bf08d4"
     end
   end
 
