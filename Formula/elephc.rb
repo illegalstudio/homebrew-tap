@@ -1,9 +1,9 @@
 class Elephc < Formula
   desc "PHP-to-native compiler targeting macOS ARM64"
   homepage "https://github.com/illegalstudio/elephc"
-  url "https://github.com/illegalstudio/elephc/releases/download/v0.27.9/elephc-v0.27.9-aarch64-apple-darwin.tar.gz"
-  sha256 "b43a8c8ede3d9b1798efae2b7e29b55136eafee24bc5dd5866d2b3984423a907"
-  version "0.27.9"
+  url "https://github.com/illegalstudio/elephc/releases/download/v0.27.10/elephc-v0.27.10-aarch64-apple-darwin.tar.gz"
+  sha256 "bbf2a7b7129c2c6ef88d6bee3d6ebc13db9250462df114b864899138f13fa6e1"
+  version "0.27.10"
   license "MIT"
 
   depends_on :macos
@@ -19,6 +19,7 @@ class Elephc < Formula
     lib.install "libelephc_gmp.a"
     lib.install "libelephc_random.a"
     lib.install "libelephc_uri.a"
+    lib.install "libelephc_filter.a"
     lib.install "libelephc_mbstring.a"
     lib.install "libelephc_iconv.a"
     lib.install "libelephc_phar.a"
@@ -43,51 +44,51 @@ class Elephc < Formula
 
   test do
     (testpath/"hello.php").write('<?php echo "hello";')
-    system bin/"elephc", "hello.php"
+    system bin/"elephc", "build", "hello.php"
     assert_equal "hello", shell_output("#{testpath}/hello")
 
     # Exercise the TLS bridge (https wrapper).
     (testpath/"https.php").write('<?php $h = fopen("https://example.com/", "r"); echo is_resource($h);')
-    system bin/"elephc", "https.php"
+    system bin/"elephc", "build", "https.php"
     assert_predicate testpath/"https", :exist?
 
     # Exercise the PDO bridge (SQLite driver is bundled; no external
     # DB client or server required). This also validates that
     # libelephc_pdo.a is discoverable in the Homebrew lib/ layout.
     (testpath/"pdo.php").write('<?php $db = new PDO("sqlite::memory:"); $db->exec("CREATE TABLE t(id INTEGER)"); echo "pdo-ok";')
-    system bin/"elephc", "pdo.php"
+    system bin/"elephc", "build", "pdo.php"
     assert_equal "pdo-ok", shell_output("#{testpath}/pdo")
 
     # Exercise the crypto bridge used by hash()/hash_hmac().
     (testpath/"hash.php").write('<?php echo hash("sha256", "abc");')
-    system bin/"elephc", "hash.php"
+    system bin/"elephc", "build", "hash.php"
     assert_equal "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad", shell_output("#{testpath}/hash")
 
     # Exercise the exact-decimal BCMath bridge.
     (testpath/"bcmath.php").write('<?php echo bcadd("1.25", "2.50", 2);')
-    system bin/"elephc", "bcmath.php"
+    system bin/"elephc", "build", "bcmath.php"
     assert_equal "3.75", shell_output("#{testpath}/bcmath")
 
     # Exercise the PHAR bridge from the Homebrew lib/ layout.
     (testpath/"phar.php").write('<?php file_put_contents("phar://brew.phar/entry.txt", "phar-ok"); $p = "brew.phar"; echo file_get_contents("phar://" . $p . "/entry.txt");')
-    system bin/"elephc", "phar.php"
+    system bin/"elephc", "build", "phar.php"
     assert_equal "phar-ok", shell_output("#{testpath}/phar")
 
     # Exercise the timezone-database bridge (DateTimeZone introspection)
     # from the Homebrew lib/ layout; getLocation() reads libelephc_tz.a.
     (testpath/"tz.php").write('<?php echo (new DateTimeZone("Europe/Rome"))->getLocation()["country_code"];')
-    system bin/"elephc", "tz.php"
+    system bin/"elephc", "build", "tz.php"
     assert_equal "IT", shell_output("#{testpath}/tz")
 
     # Exercise the image bridge (GD) from the Homebrew lib/ layout;
     # validates that libelephc_image.a is discoverable and linked.
     (testpath/"img.php").write('<?php $im = imagecreatetruecolor(3, 2); echo imagesx($im) . "x" . imagesy($im);')
-    system bin/"elephc", "img.php"
+    system bin/"elephc", "build", "img.php"
     assert_equal "3x2", shell_output("#{testpath}/img")
 
     # Exercise the web bridge link path from the Homebrew lib/ layout.
     (testpath/"web.php").write('<?php echo "web-ok";')
-    system bin/"elephc", "--web", "web.php"
+    system bin/"elephc", "build", "--web", "web.php"
     assert_predicate testpath/"web", :exist?
   end
 end
